@@ -1,0 +1,278 @@
+/* style.css */
+* {  
+  margin: 0;  
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  user-select: none;
+}
+
+body {
+   
+  font-family: Arial, sans-serif;
+  background-color: #342e2c;
+  color: white;
+}
+
+/* Layout geral */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Menu lateral esquerdo */
+.menu-lateral {
+  width: 12rem;
+  background-color:#1d1b1b;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.menu-lateral h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.menu-lateral nav button {
+  background: none;
+  border: none;
+  color: white;
+  text-align: left;
+  padding: 0.25rem 0;
+  cursor: pointer;
+}
+
+.menu-lateral nav button:hover {
+  color: #34d399;
+}
+
+.menu-lateral input {
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  color: black;
+  margin-bottom: 0.5rem;
+}
+
+.btn-inscrever {
+  background-color: #059669;
+  color: white;
+  padding: 0.25rem 0;
+  border: none;
+  border-radius: 0.25rem;
+}
+
+.btn-inscrever:hover {
+  background-color: #10b981;
+}
+
+.btn-entrar {
+  background: none;
+  color: white;
+  border: 1px solid white;
+  padding: 0.25rem 0;
+  margin-top: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.btn-entrar:hover {
+  background-color: white;
+  color: black;
+}
+
+.display {
+  padding-top: 1rem;
+  background-color: #262922;
+}
+
+/* Tabuleiro */
+.tabuleiro {
+  display: flex;
+  flex-direction: row; /* Agora os itens ficam lado a lado */
+  justify-content: center;
+  align-items: center;
+  background-color: #262922;
+  padding: 1rem;
+}
+
+.player{
+  position: relative;
+  padding-left: 1rem;
+  display: inline-flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
+  background-color: #262922;
+  margin: 0.1%; /* Espaço entre jogador e tabuleiro */
+}
+
+#box-user{   
+  position: absolute;
+  top: - 1rem;
+  left: 4rem;
+  padding: 1rem;
+  width: 451px;
+  max-width: 500px; /* Aumenta 20% além do contêiner */
+  height: 100%;
+  background-color: #94b47c57;
+  z-index: 0;
+}
+
+
+.dados-user{
+  position: absolute;
+  top: -0.7rem;
+  left: 7.4rem;
+  padding: 1rem;
+  width: 65vmin;
+}
+
+#image-player-1, #image-player-2 {
+  background-color: #262922;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  padding: 10%;
+  z-index: 0;
+}
+
+#turn-display {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #facc15;
+  font-weight: bold;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  width: 90vmin;
+  max-width: 500px;
+  aspect-ratio: 1 / 1;
+  /*border: 4px solid black;*/
+}
+
+/* Casas do tabuleiro */
+.square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  position: relative;
+}
+
+.black {
+  background-color: #94b47c;
+}
+
+.white {
+  background-color: #f3f3dc;
+}
+
+/* Peças */
+.square img {
+  width: 80%;
+  height: auto;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.square img.rotated {
+  transform: rotate(45deg);
+}
+
+/* Indicadores de movimento */
+.square img.point {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 25%;
+  left: 25%;
+  pointer-events: none;
+  z-index: 2;
+  transform: scale(1.15);
+}
+
+.square img.point-enemy {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 2;
+  transform: scale(0.8);
+}
+
+.square img.point-enemy.enemy-rotated {
+  transform: scale(0.8) rotate(45deg);
+}
+
+/* Seleção */
+/*.square.selected {
+  outline: 3px solid rgb(214, 31, 31);
+  outline-offset: -3px;
+}*/
+
+/* Painel lateral direito */
+.painel-direito {
+  width: 18rem;
+  background-color: #111827;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.painel-direito h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.painel-direito p {
+  font-size: 0.875rem;
+}
+
+.painel-direito pre {
+  background-color: #1f2937;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  height: 10rem;
+  overflow-y: auto;
+  font-size: 0.875rem;
+}
+
+.painel-direito button {
+  background-color: #374151;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0;
+  cursor: pointer;
+}
+
+.painel-direito button:hover {
+  background-color: #4b5563;
+}
+
+.painel-direito .note {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+
+.alliance-marker {
+  position: absolute;
+  
+  width: 50%;
+  height: 50%;
+  z-index: 2;
+  pointer-events: none;
+  align-items: center;
+}

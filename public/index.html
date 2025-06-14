@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Layout Xadrez</title>  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Menu lateral -->
+    <!--<div class="menu-lateral">
+      <h2>Jogo Sapiens</h2>
+      <nav>
+        <button>Jogar</button>
+        <button>Problemas</button>
+        <button>Aprender</button>
+        <button>Assistir</button>
+        <button>Notícias</button>
+        <button>Social</button>
+        <button>Mais</button>
+      </nav>
+      <input type="text" placeholder="Pesquisar" />
+      <button class="btn-inscrever">Inscreva-se</button>
+      <button class="btn-entrar">Entrar</button>
+    </div>-->
+
+    <!-- Tabuleiro de xadrez -->
+    <div   class="display">
+      
+      <div id="player-top" class="player">    
+        <div id="box-user"></div>
+        <div class="dados-user">
+          <h1 id="name-user">Albert Einstein</h1>
+          <ul id="insignia-user"> 
+          </ul>
+        </div>
+        <img id="image-player-1" src="https://i.pinimg.com/736x/e5/5b/88/e55b88f7daf1caf2a9bf74d46557f9d2.jpg" alt="">
+      </div>
+
+      <div class="tabuleiro">      
+        <div id="board"></div>      
+      </div>
+
+      <div id="player-bottom" class="player">    
+        <div id="box-user"></div>
+        <div class="dados-user">
+          <h1 id="name-user">Salvador Dalí</h1>
+        </div>
+        <img id="image-player-2" src="https://i.pinimg.com/736x/9d/a1/91/9da191d79f0f876dc03b32d48b58d2d6.jpg" alt="">
+      </div>
+
+    </div>
+  
+
+    <!-- Painel lateral direito -->
+    <!--<div class="painel-direito">
+      <h3>Análise</h3>
+      <p>Avaliação: <span>Linhas</span></p>
+      <p>Four Knights Game</p>
+      <pre>1. e4 e5 2. Nf3 Nc6 3. Nc3 Nf6 4. d3 d5 5. Ng5 Na5 6. d3 f6 7. f3</pre>
+      <button>Nova 10 min</button>
+      <button>Revanche</button>
+      <p class="note">Por favor, não inicie uma partida a menos que você esteja pronto para jogar.</p>
+    </div>-->
+  </div>
+  <!-- Socket.IO -->
+  <script src="/socket.io/socket.io.js"></script>
+
+  <!-- Módulo principal -->
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>
